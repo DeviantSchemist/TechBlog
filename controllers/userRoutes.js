@@ -50,8 +50,8 @@ router.delete('/users/:id', (req, res) => {
 
 // route for new users registering for site
 router.post('/users/register', (req, res) => {
-  const { name, email, username } = req.body
-  User.register(new User({ name, email, username }), req.body.password, err => {
+  const { username } = req.body
+  User.register(new User({ username }), req.body.password, err => {
     if (err) { console.log(err) }
     res.sendStatus(200)
   })

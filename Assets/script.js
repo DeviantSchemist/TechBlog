@@ -10,7 +10,7 @@ document.getElementById('name of login button').addEventListener('click', event 
     .then(({ data: token }) => {
       if (token) {
         localStorage.setItem('token', token)
-        window.location = '/'
+        window.location = 'name of html page'
       } else {
         alert('Invalid username or password')
       }
@@ -27,6 +27,6 @@ document.getElementById('name of register button').addEventListener('click', eve
     username: document.getElementById('username').value,
     password: document.getElementById('password').value
   })
-    .then(() => window.location = 'name of window')
+    .then(() => window.location = 'name of html page')
     .catch(err => console.error(err))
 })
