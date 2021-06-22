@@ -16,6 +16,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 passport.use(User.createStrategy())
+
 passport.serializeUser((user, done) => {
   done(null, user.id)
 })
@@ -33,8 +34,9 @@ passport.use(new JWTStrategy({
   .then(user => cb(null, user))
   .catch(err => cb(err))))
 
-app.use(require('./routes'))
+app.use(require('./controllers'))
 
-require('./db').sync()
+require('./config')
+  .sync()
   .then(() => app.listen(process.env.PORT || 3000))
   .catch(err => console.log(err))
