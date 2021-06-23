@@ -3,3 +3,17 @@ header h1 {
   padding-bottom: 3%;
   color: white;
 }
+
+body {
+  background-color: #ccffeb;
+}
+
+.post {
+  border: 5px solid red;
+  border-style: groove;
+}
+
+.post h1 {
+  color: white;
+  background-color: black;
+}
