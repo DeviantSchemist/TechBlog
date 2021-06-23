@@ -27,13 +27,6 @@ router.get('/users/:id', (req, res) => {
   .catch(err => console.log(err))
 })
 
-// create new user
-router.post('/users', (req, res) => {
-  User.create(req.body)
-  .then(user => res.json(user))
-  .catch(err => console.log(err))
-})
-
 // update existing user by id
 router.put('/users/:id', (req, res) => {
   User.update(req.body, { where: { id: req.params.id } })
