@@ -17,3 +17,7 @@ body {
   color: white;
   background-color: black;
 }
+
+.disappear {
+  display: none;
+}

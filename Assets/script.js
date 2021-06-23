@@ -26,3 +26,10 @@ document.getElementById('register').addEventListener('click', event => {
   .then(() => window.location = '/login.html')
   .catch(err => console.error(err))
 })
+
+if (localStorage.hasOwnProperty('token')) {
+  document.getElementById('login-nav').classList.add('disappear')
+}
+else {
+  document.getElementById('logout-nav').classList.add('disappear')
+}
