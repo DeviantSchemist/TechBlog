@@ -1,32 +1,3 @@
-// logs in user
-document.getElementById('login').addEventListener('click', event => {
-  event.preventDefault()
-  axios.post('/api/users/login', {
-    username: document.getElementById('username').value,
-    password: document.getElementById('password').value
-  })
-  .then(({ data: token }) => {
-    if (token) {
-      localStorage.setItem('token', token)
-      window.location = '/index.html'
-    } else {
-      alert('Invalid username or password')
-    }
-  })
-  .catch(err => console.error(err))
-})
-
-// registers new user
-document.getElementById('register').addEventListener('click', event => {
-  event.preventDefault()
-  axios.post('/api/users/register', {
-    username: document.getElementById('username').value,
-    password: document.getElementById('password').value
-  })
-  .then(() => window.location = '/login.html')
-  .catch(err => console.error(err))
-})
-
 if (localStorage.hasOwnProperty('token')) {
   document.getElementById('loginNav').classList.add('disappear')
 }
