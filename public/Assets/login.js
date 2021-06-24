@@ -1,3 +1,10 @@
+if (localStorage.hasOwnProperty('token')) {
+  document.getElementById('loginNav').classList.add('disappear')
+}
+else {
+  document.getElementById('logoutNav').classList.add('disappear')
+}
+
 // logs in user
 document.getElementById('login').addEventListener('click', event => {
   event.preventDefault()
