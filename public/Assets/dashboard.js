@@ -21,4 +21,10 @@ document.getElementById('postButton').addEventListener('click', event => {
 
 document.getElementById('submit').addEventListener('click', event => {
   event.preventDefault()
+  axios.post('/posts', {
+    post_title: document.getElementById('title').value,
+    post_content: document.getElementById('content').value
+  })
+  .then(() => window.location = '/index.html')
+  .catch(err => console.error(err))
 })
