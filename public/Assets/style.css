@@ -21,3 +21,9 @@ body {
 .disappear {
   display: none;
 }
+
+.post-button {
+  position: fixed;
+  bottom: 5%;
+  left: 45%;
+}
