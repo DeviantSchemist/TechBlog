@@ -28,8 +28,8 @@ document.getElementById('register').addEventListener('click', event => {
 })
 
 if (localStorage.hasOwnProperty('token')) {
-  document.getElementById('login-nav').classList.add('disappear')
+  document.getElementById('loginNav').classList.add('disappear')
 }
 else {
-  document.getElementById('logout-nav').classList.add('disappear')
+  document.getElementById('logoutNav').classList.add('disappear')
 }
