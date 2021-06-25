@@ -21,10 +21,16 @@ document.getElementById('postButton').addEventListener('click', event => {
 
 document.getElementById('submit').addEventListener('click', event => {
   event.preventDefault()
-  axios.post('/posts', {
-    post_title: document.getElementById('title').value,
-    post_content: document.getElementById('content').value
-  })
+  axios.post('/api/posts', {
+      post_title: document.getElementById('title').value,
+      post_content: document.getElementById('content').value
+    },
+    {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    }
+  )
   .then(() => window.location = '/index.html')
   .catch(err => console.error(err))
 })

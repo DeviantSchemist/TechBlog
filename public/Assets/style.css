@@ -8,12 +8,12 @@ body {
   background-color: #ccffeb;
 }
 
-.post {
+.post-item {
   border: 5px solid #47476b;
   border-style: groove;
 }
 
-.post h1 {
+.post-item h1 {
   color: white;
   background-color: black;
 }
