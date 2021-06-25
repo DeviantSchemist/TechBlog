@@ -31,5 +31,3 @@ axios.get('/api/posts')
   })
 })
 .catch(err => console.log(err))
-
-document()
