@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const { Comment, User, Post } = require('../models')
+const passport = require('passport')
 
 // find all comments
 router.get('/comments', (req, res) => {
@@ -27,8 +28,11 @@ router.get('/comments/:id', (req, res) => {
 })
 
 // create a new comment
-router.post('/comments', (req, res) => {
-  Comment.create(req.body)
+router.post('/comments', passport.authenticate('jwt'), (req, res) => {
+  Comment.create({
+    comment_content: req.body.comment_content,
+    user_id: req.user.id
+  })
   .then(comment => res.json(comment))
   .catch(err => console.log(err))
 })
