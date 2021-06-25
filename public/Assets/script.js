@@ -21,8 +21,8 @@ axios.get('/api/posts')
         <h1>${post.post_title}</h1>
         <p>${post.post_content}</p>
         <p>--${post.User.username}</p>
-        <div class="comment">
-          <h3>Comment</h3>
+        <div id="commentArea" class="comment">
+          <h3 id="commentHeader">Add a New Comment</h3>
           <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
         </div>
         <button id="commentButton" type="button" class="btn btn-secondary btn-sm">Comment</button>
@@ -31,3 +31,5 @@ axios.get('/api/posts')
   })
 })
 .catch(err => console.log(err))
+
+document()

@@ -12,6 +12,10 @@ app.use(express.static(join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+// app.engine('handlebars', handlebars())
+// app.set('view engine', 'handlebars')
+// app.get('/', (req, res) => {res.render('index')})
+
 app.use(passport.initialize())
 app.use(passport.session())
 
