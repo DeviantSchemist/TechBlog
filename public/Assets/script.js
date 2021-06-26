@@ -1,3 +1,5 @@
+/* if user has logged in, logout button will appear, if they have not logged in,
+    login button will appear */
 if (localStorage.hasOwnProperty('token')) {
   document.getElementById('loginNav').classList.add('disappear')
 }
@@ -5,6 +7,7 @@ else {
   document.getElementById('logoutNav').classList.add('disappear')
 }
 
+// if user logouts, removes their authorization token from local storage and go to index.html
 document.getElementById('logoutNav').addEventListener('click', () => {
   localStorage.removeItem('token')
   window.location = '/index.html'
@@ -33,6 +36,7 @@ axios.get('/api/posts')
 })
 .catch(err => console.log(err))
 
+// after the window loads, comment fields appear
 window.onload = () => {
   document.getElementById('commentButton').addEventListener('click', event => {
     document.getElementById('commentHeader').classList.remove('disappear')
@@ -60,28 +64,3 @@ window.onload = () => {
       .catch(err => console.error(err))
   })
 }
-
-// document.getElementById('commentButton').addEventListener('click', event => {
-//   document.getElementById('commentHeader').classList.remove('disappear')
-//   document.getElementById('comment').classList.remove('disappear')
-//   document.getElementById('postCommentButton').classList.remove('disappear')
-//   event.target.classList.add('disappear')
-// })
-
-// document.getElementById('postCommentButton').addEventListener('click', event => {
-//   axios.post('/api/comments', {
-//     comment_content: document.getElementById('comment').value
-//   },
-//   {
-//     headers: {
-//       'Authorization': `Bearer ${localStorage.getItem('token')}`
-//     }
-//   })
-//   .then(() => {
-//     document.getElementById('commentHeader').classList.add('disappear')
-//     document.getElementById('comment').classList.add('disappear')
-//     event.target.classList.add('disappear')
-//     document.getElementById('commentButton').remove('disappear')
-//   })
-//   .catch(err => console.error(err))
-// })

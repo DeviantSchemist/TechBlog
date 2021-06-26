@@ -1,3 +1,5 @@
+/* if user has logged in, logout button will appear, if they have not logged in,
+    login button will appear */
 if (localStorage.hasOwnProperty('token')) {
   document.getElementById('loginNav').classList.add('disappear')
 }
